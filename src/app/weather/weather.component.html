@@ -1,0 +1,19 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">City</th>
+      <th scope="col">Current Weather</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let weather of weathers' >
+      <td>
+        <a routerLink="/detail/{{weather.id}}">
+          {{weather.location}}
+        </a>        
+      </td>
+      <td>{{weather.main}}</td><button class="delete" title="delete location" (click)="delete(weather)">x</button>
+    </tr>
+  </tbody>
+</table>
+<button class="add" title="add location">Add</button>
