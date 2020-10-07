@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GetWeatherService } from './get-weather.service';
 import { Weather } from '../weather';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PopupAddLocationComponent } from '../popup-add-location/popup-add-location.component';
 
 @Component({
   selector: 'app-weather',
@@ -14,6 +15,7 @@ export class WeatherComponent implements OnInit {
   locationWeather: Weather;
   show: Boolean = false;
   addWeatherForm: FormGroup;
+  Popup: PopupAddLocationComponent;
 
   constructor(
     private getWeatherService: GetWeatherService,

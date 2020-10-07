@@ -16,7 +16,8 @@
     </tr>
   </tbody>
 </table>
-<button class="toggle" title="add location" (click)="toggle()">Add</button>
+<button class="toggle" title="add location" (click)="toggle()">Add by hand</button>
+
 
 <div *ngIf="show">
   <form [formGroup]="addWeatherForm" (ngSubmit)="add()">
