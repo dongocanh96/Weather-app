@@ -19,7 +19,6 @@ export class WeatherDetailComponent implements OnInit {
 
   getWeather(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    console.log(id);
     this.getWeatherService.getWeather(id)
       .subscribe(weather => this.weather = weather);
   }

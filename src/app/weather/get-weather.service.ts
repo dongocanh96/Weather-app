@@ -28,4 +28,8 @@ export class GetWeatherService {
     const url = `${this.weatherUrl}/${id}`;
     return this.http.delete<Weather>(url);
   }
+
+  addWeather(weather: Weather): Observable<Weather> {
+    return this.http.post(this.weatherUrl, weather ) as Observable<Weather>;
+  }
 }

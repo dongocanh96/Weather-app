@@ -16,4 +16,29 @@
     </tr>
   </tbody>
 </table>
-<button class="add" title="add location">Add</button>
+<button class="toggle" title="add location" (click)="toggle()">Add</button>
+
+<div *ngIf="show">
+  <form [formGroup]="addWeatherForm" (ngSubmit)="add()">
+    <div class="form-group">
+        <label>Location</label><br>
+        <input type="text" formControlName="location"/>
+    </div>
+    <div></div>
+    <div class="form-group">
+        <label>Main weather</label><br>
+        <input type="text" formControlName="main"/>
+    </div>
+    <div class="form-group">
+        <label>Temperature</label><br>
+        <input type="number" formControlName="temp"/>
+    </div>
+    <div class="form-group">
+        <label>Humidity</label><br>
+        <input type="number" formControlName="humidity"/>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+  </form>
+</div>

@@ -8,6 +8,7 @@ import { WeatherDetailComponent } from './weather-detail/weather-detail.componen
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { InMemoryDataService } from './in-memory-data.service';
     AppRoutingModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false}
-    )
+    ),
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
