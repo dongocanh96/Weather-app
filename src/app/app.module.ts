@@ -9,18 +9,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { PopupAddLocationComponent } from './popup-add-location/popup-add-location.component';
+// import { PopupAddLocationComponent } from './popup-add-location/popup-add-location.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeatherComponent,
     WeatherDetailComponent,
-    PopupAddLocationComponent
+    // PopupAddLocationComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     AppRoutingModule,
     HttpClientInMemoryWebApiModule.forRoot(
@@ -31,11 +33,10 @@ import { PopupAddLocationComponent } from './popup-add-location/popup-add-locati
   ],
   providers: [],
   bootstrap: [
-    AppComponent,
-    PopupAddLocationComponent
+    AppComponent
   ],
   exports: [
-    PopupAddLocationComponent
+    WeatherDetailComponent
   ]
 })
 export class AppModule { }

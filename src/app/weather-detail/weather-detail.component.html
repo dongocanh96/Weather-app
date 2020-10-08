@@ -1,6 +1,18 @@
-<h2>{{weather?.location}}'s Weather Detail</h2>
-<ul>
-  <li>Main weather: {{weather?.main}}</li>
-  <li>Temp: {{weather?.temp}}</li>
-  <li>Humidity: {{weather?.humidity}}</li>
-</ul>
+<ng-container *ngIf="weather">
+  <h2>{{weather?.location}}'s Weather Detail</h2>
+  <ul>
+    <li>
+      <div>Main weather:</div>
+      <div><input [(ngModel)]="weather.main" placeholder="main" name="main"/></div>
+    </li>
+    <li>
+      <div>Temp:</div>
+      <div><input [(ngModel)]="weather.temp" placeholder="temp" name="temp"/></div>
+    </li>
+    <li>
+      <div>Humidity:</div>
+      <div><input [(ngModel)]="weather.humidity" placeholder="humidity" name="humidity"/></div>
+    </li>
+  </ul>
+  <button (click)="save()">save</button>
+</ng-container>

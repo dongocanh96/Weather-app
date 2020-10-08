@@ -23,6 +23,10 @@ export class GetWeatherService {
     return this.http.get<Weather>(url);
   }
 
+  updateWeather(weather: Weather): Observable<any> {
+    return this.http.put(this.weatherUrl, weather);
+  }
+
   deleteWeather(weather: Weather): Observable<Weather> {
     const id = weather.id;
     const url = `${this.weatherUrl}/${id}`;
